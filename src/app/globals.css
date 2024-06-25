@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "IranYekan";
+  src: url("./assets/font/IRANYekanRegular.ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "IranYekanNumber";
+  src: url("./assets/font/IRANYEKANRegularNumber.ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "IranYekanLight";
+  src: url("./assets/font/IRANYekanLight.ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "IranYekanBold";
+  src: url("./assets/font/IRANYekanBold.ttf");
+  font-display: fallback;
+}
+body {
+  direction: rtl;
+}
