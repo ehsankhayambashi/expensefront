@@ -21,8 +21,8 @@ import DateObject from "react-date-object";
 import NumberSeparator from "@/utils/NumberSeprator";
 import { convertNumberToWords } from "../helper/controller";
 import NumericInput from "@/components/NumericInput/NumericInput";
-import convertPersianToEnglish from "@/utils/convertPersianToEnglish";
 import PlusIcon from "@/app/assets/icons/PlusIcon";
+import convertPersianToEnglish from "@/utils/ConvertPersianToEnglish";
 
 const UpsertExpense = ({
   isOpenUpsert,
@@ -71,7 +71,7 @@ const UpsertExpense = ({
                         setValue("price", e.target.value, {
                           shouldValidate: true,
                         });
-                      }}
+                      }
                     /> */}
                     <Input
                       variant="bordered"
