@@ -27,6 +27,7 @@ const config: Config = {
       },
       animation: {
         progressAnim: "progressAnimKeyframe 3s ease 0s",
+        "login-animate": "login-animate 5s linear infinite",
       },
       colors: {
         asiatech: {
@@ -127,6 +128,9 @@ const config: Config = {
       },
       boxShadow: {
         one: "0px 4px 46px 0px rgba(214, 221, 227, 0.25)",
+      },
+      spacing: {
+        "2px": "2px",
       },
     },
   },
