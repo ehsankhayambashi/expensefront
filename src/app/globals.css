@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@keyframes login-animate {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+section span {
+  transition: 1.5s;
+}
+
+section span:hover {
+  background: #00f;
+  transition: 0s;
+}
+
+section {
+  gap: 0;
+}
+
+.login-span {
+  width: calc(6.25vw - 4px);
+  height: calc(6.25vw - 4px);
+  margin: 2px;
+}
+
+@media (max-width: 1024px) {
+  .login-span {
+    width: calc(10vw - 4px);
+    height: calc(10vw - 4px);
+    margin: 2px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-span {
+    width: calc(12.5vw - 4px);
+    height: calc(12.5vw - 4px);
+    margin: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-span {
+    width: calc(25vw - 4px);
+    height: calc(25vw - 4px);
+    margin: 2px;
+  }
+}
+
+.login-input:focus ~ i,
+.login-input:valid ~ i {
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: black;
+}
+
+@font-face {
+  font-family: "IranYekan";
+  src: url("./assets/font/IRANYekanRegular.ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "IranYekanNumber";
+  src: url("./assets/font/IRANYEKANRegularNumber.ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "IranYekanLight";
+  src: url("./assets/font/IRANYekanLight.ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "IranYekanBold";
+  src: url("./assets/font/IRANYekanBold.ttf");
+  font-display: fallback;
+}
+body {
+  direction: rtl;
+}
