@@ -17,7 +17,7 @@ import { Logout } from "@/utils/Logout";
 const MyNavbar = () => {
   let menuItems = [
     { label: "مدیریت هزینه", path: "/expense" },
-    { label: "گزارش", path: "/reports" },
+    // { label: "گزارش", path: "/reports" },
     { label: "وبلاگ", path: "/blog" },
     { label: "ورود", path: "/login" },
     { label: "ثبت نام", path: "/register" },
@@ -70,17 +70,17 @@ const MyNavbar = () => {
           </NavbarItem>
         )}
         {isAuthenticated && (
-          <NavbarItem>
+          <NavbarItem isActive>
             <Link color="foreground" href="/reports">
               گزارش
             </Link>
           </NavbarItem>
         )}
-        <NavbarItem isActive>
+        {/* <NavbarItem isActive>
           <Link href="/blog" aria-current="page" color="foreground">
             وبلاگ
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
       </NavbarContent>
 
       {!isAuthenticated ? (

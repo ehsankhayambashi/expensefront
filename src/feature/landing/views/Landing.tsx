@@ -54,7 +54,7 @@ const Landing = ({ props, features }: ILandingPage) => {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {keyfeatureitem.map((item: any, index: number) => {
               return (
-                <div className="text-center">
+                <div key={index + item} className="text-center">
                   <div className="text-6xl text-blue-600 mb-4">{item.icon}</div>
                   <h3 className="text-2xl font-semibold text-gray-800">
                     {item.title}
@@ -87,8 +87,8 @@ const Landing = ({ props, features }: ILandingPage) => {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <p className="text-gray-700">
-                "اپلیکیشنی فوق‌العاده! مدیریت هزینه‌هایم با جیب‌سنج بسیار آسان
-                شده است."
+                &apos;اپلیکیشنی فوق‌العاده! مدیریت هزینه‌هایم با جیب‌سنج بسیار
+                آسان شده است.&apos;
               </p>
               <h3 className="text-lg font-semibold text-gray-800 mt-4">
                 علی ر.
@@ -96,8 +96,8 @@ const Landing = ({ props, features }: ILandingPage) => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <p className="text-gray-700">
-                "نمودارهای دقیق و کاربردی جیب‌سنج به من کمک کرد تا هزینه‌های
-                غیرضروری‌ام را کاهش دهم."
+                &apos;نمودارهای دقیق و کاربردی جیب‌سنج به من کمک کرد تا
+                هزینه‌های غیرضروری‌ام را کاهش دهم.&apos;
               </p>
               <h3 className="text-lg font-semibold text-gray-800 mt-4">
                 سارا م.
@@ -105,8 +105,8 @@ const Landing = ({ props, features }: ILandingPage) => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <p className="text-gray-700">
-                "استفاده از جیب‌سنج خیلی راحت است و من از امنیت بالای آن
-                مطمئنم."
+                &apos;استفاده از جیب‌سنج خیلی راحت است و من از امنیت بالای آن
+                مطمئنم.&apos;
               </p>
               <h3 className="text-lg font-semibold text-gray-800 mt-4">
                 محمد ن.

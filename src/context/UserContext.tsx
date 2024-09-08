@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useContext, useMemo } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { DecodeJwt } from "@/utils/DecodeJwt";
 
 interface UserContextProps {
@@ -9,15 +15,15 @@ interface UserContextProps {
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const token = useMemo(() => localStorage.getItem("access"), []);
-  const userId = useMemo(() => {
+  const [userId, setUserId] = useState<number>(0);
+
+  useEffect(() => {
+    const token = localStorage.getItem("access");
     if (token) {
       const payload = DecodeJwt(token);
-      return Number(payload?.id);
-    } else {
-      return 0;
+      setUserId(Number(payload?.id));
     }
-  }, [token]);
+  }, []);
 
   return (
     <UserContext.Provider value={{ userId }}>{children}</UserContext.Provider>

@@ -33,7 +33,7 @@ import { RiEditBoxLine } from "react-icons/ri";
 import { GiExpense } from "react-icons/gi";
 import { IoSpeedometerOutline } from "react-icons/io5";
 import { FaSearchDollar } from "react-icons/fa";
-import withAuth from "@/components/WithAuth/withAuth";
+import WithAuth1 from "@/components/WithAuth/WithAuth1";
 
 const TableExpense = () => {
   const {
@@ -286,4 +286,4 @@ const TableExpense = () => {
   );
 };
 
-export default withAuth(TableExpense);
+export default WithAuth1(TableExpense);

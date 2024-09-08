@@ -5,7 +5,9 @@ import Notify from "@/utils/Notify";
 export const registerUser = (body: any, router: any) => {
   APostUser(body)
     .then((res: any) => {
-      localStorage.setItem("access", res.data.jwt);
+      if (typeof window != "undefined") {
+        localStorage.setItem("access", res.data.jwt);
+      }
       FetchApi.setToken(res.data.jwt);
       if (typeof window != "undefined") {
         window.location.href = "/expense";

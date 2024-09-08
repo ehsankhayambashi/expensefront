@@ -31,10 +31,8 @@ const Index = () => {
             >
               {/* logo */}
               <div className="flex flex-col items-center">
-                <div className="w-14">
-                  <img src={"./Mellatlogo.png"} className="w-full h-full" />
-                </div>
-                <p>سامانه بانک ملت</p>
+                <div className="text-4xl">💸</div>
+                <p>جیب‌سنج</p>
               </div>
               <div className="flex flex-col gap-6 w-full">
                 <div className="w-full">

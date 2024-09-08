@@ -11,7 +11,8 @@ import { Button, Card, CardHeader } from "@nextui-org/react";
 import ReportIcon from "@/app/assets/icons/ReportIcon";
 import { getChart } from "../helper/controller";
 import EChartsReact from "echarts-for-react";
-import withAuth from "@/components/WithAuth/withAuth";
+import WithAuth1 from "@/components/WithAuth/WithAuth1";
+
 const Index = () => {
   let { getValues, setValue, option, setOption, userId } = useReports();
 
@@ -73,4 +74,4 @@ const Index = () => {
   );
 };
 
-export default withAuth(Index);
+export default WithAuth1(Index);

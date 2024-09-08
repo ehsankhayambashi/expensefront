@@ -10,11 +10,13 @@ export const useAuth = () => {
   const [loading, setLoading] = useState(true); // State to track loading
 
   useEffect(() => {
-    const token = localStorage.getItem("access"); // Retrieve JWT from local storage or cookies
-    if (!token) {
-      setIsAuthenticated(false); // No token means user is not authenticated
-      setLoading(false);
-      return;
+    if (typeof window != "undefined") {
+      const token = localStorage.getItem("access"); // Retrieve JWT from local storage or cookies
+      if (!token) {
+        setIsAuthenticated(false); // No token means user is not authenticated
+        setLoading(false);
+        return;
+      }
     }
 
     const validateToken = async () => {
