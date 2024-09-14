@@ -54,7 +54,7 @@ const Index = () => {
                       ],
                     }}
                     onChange={(e: any) => {
-                      setValue("username", e.target.value, {
+                      setValue("username", e.target.value.toLowerCase(), {
                         shouldValidate: true,
                       });
                     }}
@@ -82,7 +82,7 @@ const Index = () => {
                       ],
                     }}
                     onChange={(e: any) => {
-                      setValue("email", e.target.value, {
+                      setValue("email", e.target.value.toLowerCase(), {
                         shouldValidate: true,
                       });
                     }}

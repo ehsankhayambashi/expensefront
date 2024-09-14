@@ -59,12 +59,12 @@ const TableExpense = () => {
   } = useExpense();
 
   return (
-    <Card className="shadow-one px-4 py-6 mt-6 overflow-visible">
+    <Card className="shadow-one px-4 py-6 mt-6 overflow-visible min-w-60">
       <CardHeader className="flex gap-2 p-0 mb-6 text-asiatech-gray-800">
         <FaSearchDollar />
         <span className="font-extrabold text-base">مدیریت هزینه</span>
       </CardHeader>
-      <div className="relative flex flex-col mb-16">
+      <div className="relative flex flex-col">
         <div className="overflow-auto px-1 h-full">
           <Table
             aria-label="domain table"

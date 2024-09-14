@@ -135,6 +135,16 @@ const config: Config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [
+    nextui({
+      layout: {
+        fontSize: {
+          small: "1rem", // Overrides font size for small text elements
+          medium: "1.125rem", // Example for medium font size
+          large: "1.25rem", // Example for large font size
+        },
+      },
+    }),
+  ],
 };
 export default config;

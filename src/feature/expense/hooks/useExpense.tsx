@@ -62,7 +62,7 @@ export const useExpense = () => {
       price: "",
       sub_category: "",
       page: 1,
-      pageSize: 10,
+      pageSize: 6,
       pageCount: 0,
       total: 0,
       id: "",

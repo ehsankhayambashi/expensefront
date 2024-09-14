@@ -62,7 +62,7 @@ const UpsertExpense = ({
     handleSubmitSubCat,
     onSubmitFormSubCat,
   } = useSubCategory(setValue, setSubCategory);
-  console.log(getValues());
+
   return (
     <>
       <Modal

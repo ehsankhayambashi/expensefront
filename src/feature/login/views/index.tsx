@@ -61,7 +61,7 @@ const Index = () => {
                       ],
                     }}
                     onChange={(e: any) => {
-                      setValue("identifier", e.target.value, {
+                      setValue("identifier", e.target.value.toLowerCase(), {
                         shouldValidate: true,
                       });
                     }}

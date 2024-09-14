@@ -17,8 +17,8 @@ import { Logout } from "@/utils/Logout";
 const MyNavbar = () => {
   let menuItems = [
     { label: "مدیریت هزینه", path: "/expense" },
-    // { label: "گزارش", path: "/reports" },
-    { label: "وبلاگ", path: "/blog" },
+    { label: "گزارش", path: "/reports" },
+    // { label: "وبلاگ", path: "/blog" },
     { label: "ورود", path: "/login" },
     { label: "ثبت نام", path: "/register" },
     { label: "خروج", path: "/login" },

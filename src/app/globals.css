@@ -15,7 +15,12 @@
 
 section span {
   transition: 1.5s;
+}s
+
+input{
+  font-size: 1rem !important;
 }
+
 
 section span:hover {
   background: #00f;
