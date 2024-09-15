@@ -18,7 +18,7 @@ const MyNavbar = () => {
   let menuItems = [
     { label: "مدیریت هزینه", path: "/expense" },
     { label: "گزارش", path: "/reports" },
-    // { label: "وبلاگ", path: "/blog" },
+    { label: "وبلاگ", path: "/posts" },
     { label: "ورود", path: "/login" },
     { label: "ثبت نام", path: "/register" },
     { label: "خروج", path: "/login" },
@@ -76,11 +76,11 @@ const MyNavbar = () => {
             </Link>
           </NavbarItem>
         )}
-        {/* <NavbarItem isActive>
-          <Link href="/blog" aria-current="page" color="foreground">
+        <NavbarItem isActive>
+          <Link href="/posts" aria-current="page" color="foreground">
             وبلاگ
           </Link>
-        </NavbarItem> */}
+        </NavbarItem>
       </NavbarContent>
 
       {!isAuthenticated ? (

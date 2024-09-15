@@ -1,17 +1,20 @@
 // app/posts/[id]/page.tsx
 
+import {
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Link,
+} from "@nextui-org/react";
 import { cookies } from "next/headers";
-
-// interface Post {
-//   id: number;
-//   title: string;
-//   body: string;
-// }
+import Image from "next/image";
+import React from "react";
 
 // Function to fetch data for a specific post by ID
 async function fetchPost(id: string): Promise<any> {
   const cookieStore = cookies();
-  const token = cookieStore.get("access")?.value; // دریافت کوکی "access"
+  const token = cookieStore.get("access")?.value; // Get "access" cookie
   const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/posts/${id}?populate=*`;
   const res = await fetch(url, {
     method: "GET",
@@ -36,25 +39,50 @@ interface PostPageProps {
 
 export default async function PostPage({ params }: PostPageProps) {
   const post = await fetchPost(params.id); // Fetch post data using the route parameter
-  console.log(post)
+  console.log(post);
   return (
-    <div>
-      <h1>{post.attributes.title}</h1>
-      <p>{post.body}</p>
-    </div>
+    <Card className="m-4">
+      <CardHeader>
+        <h1 className="text-lg md:text-4xl md:p-8">
+          {post.data.attributes.title}
+        </h1>
+      </CardHeader>
+      <CardBody className="text-right md:px-16">
+        <Image
+          width={270}
+          height={270}
+          src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${post.data.attributes.image.data.attributes.url}`}
+          className="w-full md:h-80 object-cover pb-4"
+          alt={post.data.attributes.image.data.attributes.alternativeText}
+        />
+        <div>
+          {post.data.attributes.body
+            .split("\n")
+            .map((line: string, index: number) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
+        </div>
+      </CardBody>
+      <CardFooter>
+        <Link color="primary" className="leading-8 md:px-12" href="/expense">
+          همین الان از جیب‌سنج برای مدیریت هزینه ها استفاده کنید
+        </Link>
+      </CardFooter>
+    </Card>
   );
 }
 
 // Function to generate static parameters for dynamic routes
 export async function generateStaticParams() {
-  const cookieStore = cookies();
-  const token = cookieStore.get("access")?.value; // دریافت کوکی "access"
-  const url1 = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/posts/${id}?populate=*`;
-  const res = await fetch(url1, {
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/posts?populate=*`; // Adjusted to fetch all posts
+  const res = await fetch(url, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: token ? `Bearer ${token}` : "",
+      // No Authorization header here
     },
     next: { revalidate: 10 },
   });
@@ -63,7 +91,10 @@ export async function generateStaticParams() {
     throw new Error("Failed to fetch posts");
   }
 
-  const posts: { id: number }[] = await res.json();
+  const data = await res.json();
+
+  // Assuming the response structure includes an array of posts
+  const posts: { id: number }[] = data.data; // Adjust based on the actual response structure
 
   // Return an array of objects with the `id` parameter for each post
   return posts.map((post) => ({
